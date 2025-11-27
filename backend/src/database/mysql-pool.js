@@ -3,7 +3,7 @@ const mysql = require("mysql2/promise");
 const getConnection = async () => {
     const connection = await mysql.createConnection({
         host: "localhost",
-        database: "ecommerce",
+        database: "proyecthadas",
         user: process.env.USER_WORKBENCH,
         password: process.env.PASSWORD_WORKBENCH,
     });

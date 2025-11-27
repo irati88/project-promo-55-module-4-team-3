@@ -9,10 +9,10 @@ Dejar funcionando:
 ## :paquete: División en 3 partes
 ### :círculo_morado_grande: Parte 1 – Planning y arquitectura (1 día)
 **Tareas:**
-- [ ] Crear repositorio backend + organización de carpetas
-- [ ] Crear archivo `app.js`
-- [ ] Configurar middlewares
-- [ ] Decidir motor de plantillas (Pug recomendado por su sintaxis limpia)
+- [x] Crear repositorio backend + organización de carpetas
+- [x] Crear archivo `app.jsx`
+- [x] Configurar middlewares
+- [?] Decidir motor de plantillas (Pug recomendado por su sintaxis limpia)
 **Roles:**
 - [ ] **Dev1** → estructura del servidor
 - [ ] **Dev2** → setup base de datos
@@ -20,11 +20,11 @@ Dejar funcionando:
 ---
 ### :círculo_verde_grande: Parte 2 – Desarrollo (2–3 días)
 **Tareas técnicas:**
-- [ ] Crear base de datos y tablas
+- [x] Crear base de datos y tablas
 - [ ] Crear conexión desde Node
-- [ ] Crear `GET /api/projects`
-- [ ] Crear `GET /api/projects/:id`
-- [ ] Crear `POST /api/projects` (validación + inserción)
+- [ ] Crear `GET /projects`
+- [ ] Crear `GET /projects/:id`
+- [ ] Crear `POST /projects` (validación + inserción)
 - [ ] Probar con Postman
 **Roles:**
 - [ ] **Dev1** → Endpoints GET
