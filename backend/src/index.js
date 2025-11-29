@@ -29,4 +29,4 @@ app.get("/projects", getProjectsController)
 app.get("/project/:id", getProjectIdController)
 
 // POST/project/:id
-app.post("/project/:id", postProjectController)
+app.post("/project", postProjectController)
