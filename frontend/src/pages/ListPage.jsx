@@ -6,50 +6,7 @@ import Footer from "../components/Footer.jsx";
 import "../styles/list-page.css";
 
 const defaultProjects = [
-  {
-    id: "1",
-    name: "CodeHer",
-    slogan: "La tecnología también tiene rostro de mujer",
-    technologies: "React, Node.js, MongoDB, Sass",
-    repo: "https://github.com/ejemplo/codeher",
-    demo: "https://codeher.netlify.app/",
-    description: "Plataforma educativa creada por mujeres desarrolladoras para enseñar programación a principiantes mediante retos interactivos y mentorías colaborativas.",
-    autor: "Claudia Fernández",
-    job: "Desarrolladora Full Stack",
-  },
-  {
-    id: "2",
-    name: "ArteViva",
-    slogan: "El arte como herramienta de transformación social",
-    technologies: "HTML, CSS, JavaScript, Firebase",
-    repo: "https://github.com/ejemplo/arteviva",
-    demo: "https://arteviva.web.app/",
-    description: "Galería digital que visibiliza el trabajo de artistas emergentes, ofreciendo exposiciones virtuales e historias inspiradoras sobre sus procesos creativos.",
-    autor: "Carla Gómez",
-    job: "Artista visual y diseñadora",
-  },
-  {
-    id: "3",
-    name: "GreenRoots",
-    slogan: "Cuidar el planeta desde nuestras raíces",
-    technologies: "React, Express, API REST, MongoDB",
-    repo: "https://github.com/ejemplo/greenroots",
-    demo: "https://greenroots-demo.netlify.app/",
-    description: "Iniciativa de sostenibilidad que promueve huertos urbanos colaborativos, educación ambiental y herramientas digitales para medir el impacto ecológico.",
-    autor: "Nerea López",
-    job: "Consultora en sostenibilidad",
-  },
-  {
-    id: "4",
-    name: "EduMinds",
-    slogan: "Educación creativa para un futuro consciente",
-    technologies: "React, Vite, Firebase, Tailwind",
-    repo: "https://github.com/ejemplo/eduminds",
-    demo: "https://eduminds.netlify.app/",
-    description: "Plataforma educativa que ofrece recursos y talleres de innovación pedagógica para docentes y familias, fomentando la creatividad y la igualdad en las aulas.",
-    autor: "Patricia Morales",
-    job: "Pedagoga y formadora digital",
-  },
+  
 ];
 
 const ListPage = () => {

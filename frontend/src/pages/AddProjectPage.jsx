@@ -4,6 +4,7 @@ import Header from "../components/Header.jsx";
 import Preview from "../components/Preview.jsx";
 import Form from "../components/Form.jsx";
 import Footer from "../components/Footer";
+import { addProject } from "../services/api.js";
 import "../styles/form.css";
 import "../styles/add-project-page.css";
 
@@ -21,6 +22,7 @@ const AddProjectPage = () => {
 
   const [projectImage, setProjectImage] = useState(null);
   const [authorImage, setAuthorImage] = useState(null);
+  const[ Project, setProject] = useState([])
   const navigate = useNavigate();
 
   const updateProjectImage = (base64Image) => {
@@ -48,6 +50,12 @@ const AddProjectPage = () => {
     };
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const updateProjects = [...storedProjects, newProject];
+
+    addProject().then((data) => {
+            // modificar el estado
+            setProject(data);
+        })
+
     localStorage.setItem("projects", JSON.stringify(updateProjects));
     navigate("/list");
   };
