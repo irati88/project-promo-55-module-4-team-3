@@ -20,6 +20,7 @@ const clear = () => {
   localStorage.clear();
 };
 
+// Exportamos el objeto para que pueda ser usado desde App
 export default {
   get,
   set,

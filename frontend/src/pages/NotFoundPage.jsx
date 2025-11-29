@@ -1,15 +1,14 @@
+import "react";
 import { Link } from "react-router-dom";
+import "../styles/not-found-page.css";
 
 const NotFoundPage = () => {
   return (
-    <main className="notfound-page">
-      <h1>
-        Begone, for there is nothing here for you!
-      </h1>
-      <h2>
-        <Link to="/">Home</Link>
-      </h2>
-    </main>
+    <div className="notfoundpage">
+      <h1>404 Not Found Page</h1>
+
+      <Link to="/">Home</Link>
+    </div>
   );
 };
 

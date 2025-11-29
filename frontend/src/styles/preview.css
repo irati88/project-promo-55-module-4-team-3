@@ -1,0 +1,39 @@
+.preview-section {
+  position: relative;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+  margin-bottom: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.preview-section .preview-project-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.preview-section .preview-card {
+  position: absolute;
+  bottom: -180px;
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 10;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .preview-section {
+    max-width: 900px;
+  }
+
+  .preview-section .preview-card {
+    bottom: -250px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

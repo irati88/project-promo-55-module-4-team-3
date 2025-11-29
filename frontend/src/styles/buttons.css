@@ -1,0 +1,37 @@
+.hidden {
+  display: none;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #4d4766 60%, #2b1e2e 100%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%;
+  max-width: 230px;
+  margin: 0.5rem;
+  gap: 10px;
+}
+.container-upload {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button:hover {
+  background: linear-gradient(90deg, #928baf 60%, #57365f 100%);
+  transform: scale(1.03);
+}
+
+.custom-button:active {
+  background: linear-gradient(90deg, #1a152e 60%, #231027 100%);
+  transform: scale(0.97);
+}

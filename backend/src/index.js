@@ -1,6 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const mysql = require("./database/mysql-pool");
+const {
+    getProjectsController,
+    getProjectIdController,
+    postProjectController
+} = require("./controllers")
 const app = express();
 const port = 3000;
 
@@ -17,14 +21,12 @@ app.listen(port, () => {
 });
 
 // Endpoints
-app.get("/products", async (req, res) => {
-    try {
-        const query = "SELECT * FROM products";
 
-        const connection = await mysql.getConnection();
-        const data = await connection.query(query);
-        res.json(data[0]);
-    } catch {
-        res.send("Algo ha ido mal");
-    }
-});
+// GET/projects
+app.get("/projects", getProjectsController)
+
+// GET/project/:id
+app.get("/project/:id", getProjectIdController)
+
+// POST/project/:id
+app.post("/project/:id", postProjectController)
