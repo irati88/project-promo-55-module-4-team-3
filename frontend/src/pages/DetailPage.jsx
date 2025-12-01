@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState} from "react";
-import { getProject } from "../services/api";
+
 import Header from "../components/Header";
 import Preview from "../components/Preview";
 import Footer from "../components/Footer";
+import { getProject } from "../services/api";
+
 import "../styles/header.css";
 import "../styles/preview.css";
 import "../styles/preview-project-image.css";
