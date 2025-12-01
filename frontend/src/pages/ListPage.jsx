@@ -49,9 +49,10 @@ const ListPage = () => {
   );
 };
 
-export default ListPage; */
+export default ListPage;  */
 
-import { useState, useEffect } from "react";
+
+ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import PreviewCard from "../components/PreviewCard.jsx";
@@ -74,7 +75,7 @@ const ListPage = () => {
         const data = await getProjects();
         setProjects(data);
         localStorage.setItem("projects", JSON.stringify(data));
-      } catch (err) {
+      } catch  {
         setError("Error cargando los proyectos");
       } finally {
         setLoading(false);
@@ -113,5 +114,5 @@ const ListPage = () => {
   );
 };
 
-export default ListPage;
+export default ListPage; 
 

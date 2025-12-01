@@ -42,7 +42,7 @@ export const addProject = (data) => {
 };
 
 export const getProject = (id) => {
-  return fetch(`http://localhost:3000/note/${id}`)
+  return fetch(`http://localhost:3000/project/${id}`)
     .then((response) => response.json())
     .then((data) => {
       const cleanData = data.map((item) => {
