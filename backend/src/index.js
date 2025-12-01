@@ -10,6 +10,8 @@ const port = 3000;
 
 require("dotenv").config();
 
+console.log("getProjectsController:", getProjectsController);
+
 // Configuración para subir límite de respuesta
 app.use(express.json({ limit: "25mb" }));
 // Para evitar errores de diferente origen cuando se hace la petición
