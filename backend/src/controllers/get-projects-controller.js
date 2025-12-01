@@ -7,10 +7,15 @@ const getProjectsController = async (req, res) => {
         const connection = await mysql.getConnection();
         const data = await connection.query(query);
         connection.end();
+
+        if (data.length === 0) {
+      return res.status(404).json({ error: "No se ha encontrado ningún proyecto" });
+    }
+
         res.json(data[0]);
-    } catch(error) {
+    } catch {
         res.send("Algo ha ido mal"); 
-        console.log("errorsito", error);
+        
     }
 };
 
