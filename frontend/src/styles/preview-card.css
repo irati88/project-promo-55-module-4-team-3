@@ -31,8 +31,7 @@
 .autor-contact {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
   text-align: center;
 }
 
@@ -110,30 +109,18 @@
   width: 16px;
   height: 16px;
 }
-
-@media (max-width: 768px) {
+/* =================================== MEDIA QUERIES ===================================*/
+@media (min-width: 768px) {
   .preview-img {
     width: 100%;
     align-items: center;
   }
 
-  .preview-data {
+    .preview-data {
     width: 100%;
-    padding-left: 0;
+    padding-left: 30px;
   }
 
-  .preview-data h2 {
-    font-size: 1.1rem;
-    margin-top: 0.05rem;
-  }
-
-  .preview-data p:first-of-type,
-  .preview-data .description {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 768px) {
   .preview-container {
     max-width: 500px;
     min-height: 260px;
@@ -159,6 +146,7 @@
 
   .preview-data h2 {
     font-size: 1.5rem;
+    margin-top: 0.05rem;
   }
 
   .preview-data p:first-of-type {
