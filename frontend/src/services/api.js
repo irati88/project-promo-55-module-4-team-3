@@ -42,10 +42,9 @@ export const addProject = (data) => {
 };
 
 export const getProject = (id) => {
-  return fetch(`http://localhost:3000/note/${id}`)
+  return fetch(`http://localhost:3000/project/${id}`)
     .then((response) => response.json())
-    .then((data) => {
-      const cleanData = data.map((item) => {
+    .then((item) => {
         return {
           autor: item.autor,
           job: item.job,
@@ -58,9 +57,6 @@ export const getProject = (id) => {
           repo: item.repo,
           demo: item.demo,
         };
-      });
-
-      return cleanData[0];
-    })
+      })
     .catch((error) => console.log(error));
 };
