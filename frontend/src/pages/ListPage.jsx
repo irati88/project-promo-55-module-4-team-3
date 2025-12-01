@@ -61,33 +61,17 @@ import { getProjects } from "../services/Api.js";
 import "../styles/list-page.css";
 
 const ListPage = () => {
-  const [projects, setProjects] = useState(() => {
-    const stored = localStorage.getItem("projects");
-    return stored ? JSON.parse(stored) : [];
-  });
+  const [projects, setProjects] = useState([]);
 
-  const [loading, setLoading] = useState(projects.length === 0);
-  const [error, setError] = useState(null);
-
+  
   useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const data = await getProjects();
-        setProjects(data);
-        localStorage.setItem("projects", JSON.stringify(data));
-      } catch  {
-        setError("Error cargando los proyectos");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProjects();
+    getProjects().then(data =>{
+      setProjects(data)
+    })
+         
   }, []);
 
-  if (loading) return <p>Cargando proyectos…</p>;
-  if (error) return <p>{error}</p>;
-
+ console.log (projects);
   return (
     <>
       <Header />
@@ -102,7 +86,7 @@ const ListPage = () => {
               <Link to={`/detail/${project.id}`}>
                 <PreviewCard
                   formData={project}
-                  authorImage={project.authorImage}
+                  authorImage={project.image}
                 />
               </Link>
             </li>

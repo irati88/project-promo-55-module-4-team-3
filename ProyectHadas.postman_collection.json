@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "a85475b9-796c-4c72-a91c-1ec75997ab97",
+		"name": "ProyectHadas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50048584",
+		"_collection_link": "https://karenglezschez-8727230.postman.co/workspace/Karen-gs's-Workspace~b4c04eb3-9014-4522-88a7-ed7ac188051d/collection/50048584-a85475b9-796c-4c72-a91c-1ec75997ab97?action=share&source=collection_link&creator=50048584"
+	},
+	"item": [
+		{
+			"name": "GET/projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/projects",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/project/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/project/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"project",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/project/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"2HDFHSH\",\r\n    \"slogan\": \"EGSHSHFara un futuro consciente\",\r\n    \"technologies\": \"React, Vite, Firebase, Tailwind\",\r\n    \"repo\": \"https://github.com/ejemplo/eduminds\",\r\n   \"demo\": \"https://eduminds.netlify.app/\",\r\n    \"description\": \"Plataforma educativa que ofrece recursos y talleres de innovación pedagógica para docentes y familias, fomentando la creatividad y la igualdad en las aulas.\",\r\n    \"autor\": \"Patricia Morales\",\r\n    \"job\": \"Pedagoga y formadora digital\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/project",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"project"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

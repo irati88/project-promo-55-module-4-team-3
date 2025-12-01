@@ -6,6 +6,7 @@ import Preview from "../components/Preview.jsx";
 import Form from "../components/Form.jsx";
 import Footer from "../components/Footer";
 import { addProject } from "../services/api.js";
+import ls from "../services/localStorage.js";
 
 import "../styles/form.css";
 import "../styles/add-project-page.css";
@@ -27,25 +28,43 @@ const AddProjectPage = () => {
   const [projectImage, setProjectImage] = useState(null);
   const [authorImage, setAuthorImage] = useState(null);
 
-  // Cargo los datos dle formulario desde el localStorage
+  // Cargamos formData + imágenes desde localStorage al iniciar
   useEffect(() => {
-    const saved = localStorage.getItem("formData");
-    if (saved) setFormData(JSON.parse(saved));
+    const savedForm = ls.get("formData", null);
+    if (savedForm) setFormData(savedForm);
+
+    const savedProjectImg = ls.get("projectImage", null);
+    if (savedProjectImg) setProjectImage(savedProjectImg);
+
+    const savedAuthorImg = ls.get("authorImage", null);
+    if (savedAuthorImg) setAuthorImage(savedAuthorImg);
   }, []);
 
-  // Guardo en el localStorage cada vez que cambia
+  // Guardamos cambios de texto en localStorage
   const updateForm = (ev) => {
     const { name, value } = ev.target;
-    const updateData = {
+
+    const updatedData = {
       ...formData,
       [name]: value,
     };
-    setFormData(updateData);
 
-    localStorage.setItem("formData", JSON.stringify(updateData));
+    setFormData(updatedData);
+    ls.set("formData", updatedData);
   };
 
-  // Guardo el proyecto en la API
+  // Guardamos imágenes también en localStorage
+  const updateProjectImage = (base64Image) => {
+    setProjectImage(base64Image);
+    ls.set("projectImage", base64Image);
+  };
+
+  const updateAutorImg = (base64Image) => {
+    setAuthorImage(base64Image);
+    ls.set("authorImage", base64Image);
+  };
+
+  // Guardamos el proyecto en la API
   const handleSaveProject = async () => {
     try {
       await addProject({
@@ -53,15 +72,16 @@ const AddProjectPage = () => {
         photo: projectImage,
         image: authorImage,
       });
-      // reseteamos estado
+
       handleResetForm();
       navigate("/list");
+
     } catch (error) {
-      console.log("errorsito", error);
+      console.log("Error al guardar:", error);
     }
   };
 
-  // Reseteo el form
+  // Reseteo completo
   const handleResetForm = () => {
     setFormData({
       name: "",
@@ -73,19 +93,11 @@ const AddProjectPage = () => {
       autor: "",
       job: "",
     });
+
     setProjectImage(null);
     setAuthorImage(null);
-    localStorage.clear();
-  };
 
-  const updateProjectImage = (base64Image) => {
-    setProjectImage(base64Image);
-    localStorage.setItem("projectImage", JSON.stringify(base64Image));
-  };
-
-  const updateAutorImg = (base64Image) => {
-    setAuthorImage(base64Image);
-    localStorage.setItem("authorImage", JSON.stringify(base64Image));
+    ls.clear();
   };
 
   return (

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState} from "react";
+import { getProject } from "../services/api";
 import Header from "../components/Header";
-import Preview from "../components/Preview.jsx";
+import Preview from "../components/Preview";
 import Footer from "../components/Footer";
 import "../styles/header.css";
 import "../styles/preview.css";
@@ -8,20 +10,22 @@ import "../styles/preview-project-image.css";
 import "../styles/preview-card.css";
 
 const DetailPage = () => {
-  const { id } = useParams();
-  const projects = JSON.parse(localStorage.getItem("projects")) || [];
-  const project = projects.find((item) => item.id === id);
+    const { id } = useParams();
+  const [project, setProject] = useState(null);
   
-  if (!project) {
-    return <p>Proyecto no encontrado</p>;
-  }
+  useEffect(() => {
+    getProject(id).then((data) => setProject(data));
+  }, [id]);
+
+  if (!project) return <p>Proyecto no encontrado</p>;
+  console.log(222,project);
   return (
     <>
       <Header />
       <Preview
         formData={project}
-        projectImage={project.projectImage}
-        authorImage={project.authorImage}
+        projectImage={project.photo}
+        authorImage={project.image}
       />
       <Footer />
     </>
