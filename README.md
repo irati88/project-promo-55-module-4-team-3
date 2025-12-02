@@ -1,71 +1,72 @@
-# :estrella: SPRINT 1 — Backend Base + BBDD + Endpoints Core
-## :dardo: Objetivo del Sprint 1
+# SPRINT 1 — Backend Base + BBDD + Endpoints Core
+## Objetivo del Sprint 1
 Dejar funcionando:
-- [ ] La API básica
-- [ ] La BBDD
-- [ ] Un **GET** que devuelva datos reales
-- [ ] Un **POST** que cree proyectos (mínimo funcional)
+- [X] La API básica
+- [X] La BBDD
+- [X] Un **GET** que devuelva datos reales
+- [X] Un **POST** que cree proyectos (mínimo funcional)
 ---
-## :paquete: División en 3 partes
-### :círculo_morado_grande: Parte 1 – Planning y arquitectura (1 día)
+## División en 3 partes
+### Parte 1 – Planning y arquitectura (1 día)
 **Tareas:**
 - [x] Crear repositorio backend + organización de carpetas
 - [x] Crear archivo `app.jsx`
 - [x] Configurar middlewares
 - [?] Decidir motor de plantillas (Pug recomendado por su sintaxis limpia)
 **Roles:**
-- [ ] **Dev1** → estructura del servidor
-- [ ] **Dev2** → setup base de datos
-- [ ] **Dev3** → documentación inicial + endpoints definidos
+- [X] **Dev1** → estructura del servidor
+- [X] **Dev2** → setup base de datos
+- [X] **Dev3** → documentación inicial + endpoints definidos
 ---
-### :círculo_verde_grande: Parte 2 – Desarrollo (2–3 días)
+### Parte 2 – Desarrollo (2–3 días)
 **Tareas técnicas:**
 - [x] Crear base de datos y tablas
-- [ ] Crear conexión desde Node
-- [ ] Crear `GET /projects`
-- [ ] Crear `GET /projects/:id`
-- [ ] Crear `POST /projects` (validación + inserción)
-- [ ] Probar con Postman
+- [X] Crear conexión desde Node
+- [X] Crear `GET /projects`
+- [X] Crear `GET /projects/:id`
+- [X] Crear `POST /projects` (validación + inserción)
+- [X] Probar con Postman
 **Roles:**
-- [ ] **Dev1** → Endpoints GET
-- [ ] **Dev2** → Endpoint POST + validaciones
-- [ ] **Dev3** → Modelos + servicios DB (consultas SQL limpias)
+- [X] **Dev1** → Endpoints GET
+- [X] **Dev2** → Endpoint POST + validaciones
+- [X] **Dev3** → Modelos + servicios DB (consultas SQL limpias)
 > Se divide así para que cada persona trabaje en una capa diferente y evitar bloqueos.
 ---
-### :círculo_azul_grande: Parte 3 – Test + Review + Deploy parcial (1 día)
-- [ ] Testear endpoints con Postman
-- [ ] Crear documentación en README
+### Parte 3 – Test + Review + Deploy parcial (1 día)
+- [X] Testear endpoints con Postman
+- [X] Crear documentación en README
 - [ ] Hacer demo en Render
-- [ ] Hacer retro + ajustar workflow del equipo
+- [X] Hacer retro + ajustar workflow del equipo
 ---
-# :estrella::estrella: SPRINT 2 — Motor de Plantillas + Integración con React + Deploy Final
-## :dardo: Objetivo del Sprint 2
+# SPRINT 2 — Motor de Plantillas + Integración con React + Deploy Final
+## Objetivo del Sprint 2
 Que el proyecto completo esté funcional:
-- [ ] Front consume el backend
+- [X] Front consume el backend
 - [ ] Motor de plantillas genera páginas individuales
 - [ ] Demo final en Render
 ---
-## :círculo_morado_grande: Parte 1 – Planning técnico (½ día)
+## Parte 1 – Planning técnico (½ día)
 - [ ] Decidir estructura de vistas (Pug: layout + detail)
-- [ ] Planificar integración con React
-- [ ] Revisar feedback del sprint 1
+- [X] Planificar integración con React
+- [X] Revisar feedback del sprint 1
 ---
-## :círculo_verde_grande: Parte 2 – Desarrollo (2–3 días)
+## Parte 2 – Desarrollo (2–3 días)
 **Tareas:**
 - [ ] Configurar motor de plantillas
-- [ ] Crear vista del detalle
-- [ ] Crear ruta pública `GET /project/:uuid` que renderiza la vista
-- [ ] Conectar front React:
-  - [ ] Listado desde backend
-  - [ ] Detalle desde backend
-  - [ ] Crear proyecto desde React
+- [X] Crear vista del detalle
+- [X] Crear ruta pública `GET /project/:id` que renderiza la vista
+- [X] Conectar front React:
+  - [X] Listado desde backend
+  - [X] Detalle desde backend
+  - [X] Crear proyecto desde React
 **Roles:**
-- [ ] **Dev1** → Motor de plantillas + vistas
-- [ ] **Dev2** → Integración React (GET list + GET detail)
-- [ ] **Dev3** → Integración React (POST create + validaciones visuales)
+- [X] **Dev1** → Motor de plantillas + vistas
+- [X] **Dev2** → Integración React (GET list + GET detail)
+- [X] **Dev3** → Integración React (POST create + validaciones visuales)
 ---
-## :círculo_azul_grande: Parte 3 – Test + Deploy + Review final (1 día)
-- [ ] Probar app completa
+## Parte 3 – Test + Deploy + Review final (1 día)
+- [X] Probar app completa
 - [ ] Deploy en Render
 - [ ] Demo interna
 - [ ] Retro final
+
