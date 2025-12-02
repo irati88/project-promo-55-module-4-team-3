@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import Header from "../components/Header.jsx";
-import Preview from "../components/Preview.jsx";
-import Form from "../components/Form.jsx";
-import Footer from "../components/Footer";
 import { addProject } from "../services/api.js";
-import ls from "../services/localStorage.js";
+
+import Header from "../components/Header";
+import Preview from "../components/Preview";
+import Form from "../components/Form";
+import Footer from "../components/Footer";
+
+import ls from "../services/localStorage";
 
 import "../styles/form.css";
 import "../styles/add-project-page.css";
@@ -61,21 +62,21 @@ const AddProjectPage = () => {
     ls.set("authorImage", base64Image);
   };
 
-  const handleSaveProject = async () => {
-    try {
-      await addProject({
-        ...formData,
-        photo: projectImage,
-        image: authorImage,
+  const handleSaveProject = () => {
+    addProject({
+      ...formData,
+      photo: projectImage,
+      image: authorImage,
+    })
+      .then(() => {
+        handleResetForm();
+        navigate("/list");
+      })
+      .catch((error) => {
+        throw new Error("Error al guardar el proyecto: " + error.message);
       });
-
-      handleResetForm();
-      navigate("/list");
-    } catch (error) {
-      throw new Error("Error al guardar el proyecto: " + error.message);
-    }
   };
-
+  
   const handleResetForm = () => {
     setFormData({
       name: "",

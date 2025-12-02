@@ -30,7 +30,7 @@ const Form = ({
           updateAutorImg={updateAutorImg}
         />
         <div className="form-buttons">
-          <button type="submit" className="addproject-button">
+          <button type="submit" className="addproject-button" disabled={ !formData.autor || !formData.name || !formData.job || !formData.technologies || !formData.description }>
             Guardar proyecto
           </button>
           <button 

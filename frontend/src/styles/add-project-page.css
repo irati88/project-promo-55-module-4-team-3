@@ -28,3 +28,7 @@ button:active {
   background: linear-gradient(90deg, #1a152e 60%, #231027 100%);
   transform: scale(0.97);
 }
+
+button:disabled {
+    opacity: 0.2;
+}

@@ -41,10 +41,6 @@ const postProjectController = async (req, res) => {
     const connection = await mysql.getConnection();
     const dataAutor = await connection.query(queryAutor, [autor, job, image]);
 
-    if (!dataAutor[0] || !dataAutor[0].insertId) {
-      connection.release();
-      return res.status(500).json({ error: "No se pudo crear el autor" });
-    }
     await connection.query(queryProject, [
       name,
       slogan,
@@ -59,8 +55,7 @@ const postProjectController = async (req, res) => {
     connection.end();
 
     res.status(201).json({ message: "Proyecto creado" });
-  } catch (error) {
-    console.error(error);
+  } catch {
     res.status(500).json({ error: "Error interno del servidor" });
   }
 };

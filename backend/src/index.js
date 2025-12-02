@@ -10,8 +10,6 @@ const port = 3000;
 
 require("dotenv").config();
 
-console.log("getProjectsController:", getProjectsController);
-
 app.use(express.json({ limit: "25mb" }));
 
 app.use(cors());
