@@ -50,7 +50,6 @@ const getProjectsController = async (req, res) => {
     res.json(data[0]);
   } catch (error) {
     res.send("Algo ha ido mal");
-    console.log("errorsito", error);
   }
 };
 
