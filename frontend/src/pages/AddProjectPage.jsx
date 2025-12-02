@@ -28,7 +28,6 @@ const AddProjectPage = () => {
   const [projectImage, setProjectImage] = useState(null);
   const [authorImage, setAuthorImage] = useState(null);
 
-  // Cargamos formData + imágenes desde localStorage al iniciar
   useEffect(() => {
     const savedForm = ls.get("formData", null);
     if (savedForm) setFormData(savedForm);
@@ -40,7 +39,6 @@ const AddProjectPage = () => {
     if (savedAuthorImg) setAuthorImage(savedAuthorImg);
   }, []);
 
-  // Guardamos cambios de texto en localStorage
   const updateForm = (ev) => {
     const { name, value } = ev.target;
 
@@ -53,7 +51,6 @@ const AddProjectPage = () => {
     ls.set("formData", updatedData);
   };
 
-  // Guardamos imágenes también en localStorage
   const updateProjectImage = (base64Image) => {
     setProjectImage(base64Image);
     ls.set("projectImage", base64Image);
@@ -64,7 +61,6 @@ const AddProjectPage = () => {
     ls.set("authorImage", base64Image);
   };
 
-  // Guardamos el proyecto en la API
   const handleSaveProject = async () => {
     try {
       await addProject({
@@ -75,13 +71,11 @@ const AddProjectPage = () => {
 
       handleResetForm();
       navigate("/list");
-
     } catch (error) {
-      console.log("Error al guardar:", error);
+      throw new Error("Error al guardar el proyecto: " + error.message);
     }
   };
 
-  // Reseteo completo
   const handleResetForm = () => {
     setFormData({
       name: "",

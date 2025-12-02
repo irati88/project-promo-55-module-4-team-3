@@ -7,7 +7,7 @@ const getProjectIdController = async (req, res) => {
     if (!id || isNaN(id)) {
       return res.status(400).send("id inválido");
     }
-    
+
     const query = `
       SELECT 
         projects.id_project,

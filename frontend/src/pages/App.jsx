@@ -7,7 +7,6 @@ import NotFoundPage from "./NotFoundPage";
 import "../styles/app.css";
 
 const App = () => {
-  // Aquí vamos a declarar nuestras rutas
   return (
     <Routes>
       <Route path="/" element={<AddProjectPage />} />

@@ -2,7 +2,6 @@ export const getProjects = () => {
   return fetch("http://localhost:3000/projects")
     .then((response) => response.json())
     .then((data) => {
-      console.log(11111,data);
       const cleanData = data.map((item) => {
         return {
           autor: item.autor,
@@ -17,9 +16,7 @@ export const getProjects = () => {
           repo: item.repo,
           demo: item.demo,
         };
-        
       });
-
       return cleanData;
     })
     .catch((error) => {
@@ -48,19 +45,19 @@ export const getProject = (id) => {
   return fetch(`http://localhost:3000/project/${id}`)
     .then((response) => response.json())
     .then((item) => {
-        return {
-          autor: item.autor,
-          job: item.job,
-          image: item.image,
-          id: item.id_project,
-          name: item.name,
-          description: item.description,
-          slogan: item.slogan,
-          technologies: item.technologies,
-          photo: item.photo,
-          repo: item.repo,
-          demo: item.demo,
-        };
-      })
+      return {
+        autor: item.autor,
+        job: item.job,
+        image: item.image,
+        id: item.id_project,
+        name: item.name,
+        description: item.description,
+        slogan: item.slogan,
+        technologies: item.technologies,
+        photo: item.photo,
+        repo: item.repo,
+        demo: item.demo,
+      };
+    })
     .catch((error) => console.log(error));
 };

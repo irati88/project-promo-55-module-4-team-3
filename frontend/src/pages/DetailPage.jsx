@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { getProject } from "../services/api";
 import Header from "../components/Header";
 import Preview from "../components/Preview";
@@ -10,15 +10,15 @@ import "../styles/preview-project-image.css";
 import "../styles/preview-card.css";
 
 const DetailPage = () => {
-    const { id } = useParams();
+  const { id } = useParams();
   const [project, setProject] = useState(null);
-  
+
   useEffect(() => {
     getProject(id).then((data) => setProject(data));
   }, [id]);
 
   if (!project) return <p>Proyecto no encontrado</p>;
-  console.log(222,project);
+
   return (
     <>
       <Header />

@@ -110,16 +110,16 @@
   width: 16px;
   height: 16px;
   margin: 0 4px;
-  align-items: baseline
+  align-items: baseline;
 }
-/* =================================== MEDIA QUERIES ===================================*/
+
 @media (min-width: 768px) {
   .preview-img {
     width: 100%;
     align-items: center;
   }
 
-    .preview-data {
+  .preview-data {
     width: 100%;
     padding-left: 30px;
   }

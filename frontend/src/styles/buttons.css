@@ -22,8 +22,8 @@
   gap: 10px;
 }
 .container-upload {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-button:hover {
