@@ -19,9 +19,6 @@ export const getProjects = () => {
       });
       return cleanData;
     })
-    .catch((error) => {
-      console.log(error);
-    });
 };
 
 export const addProject = (data) => {
@@ -36,9 +33,7 @@ export const addProject = (data) => {
     .then(() => {
       return;
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    
 };
 
 export const getProject = (id) => {
@@ -59,5 +54,5 @@ export const getProject = (id) => {
         demo: item.demo,
       };
     })
-    .catch((error) => console.log(error));
+   
 };

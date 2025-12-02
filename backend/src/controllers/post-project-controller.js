@@ -15,7 +15,7 @@ const postProjectController = async (req, res) => {
       description,
     } = req.body;
 
-    if (!autor || !job || !name || !technologies || !description) {
+    if (!autor ||typeof autor !== "string"|| !job || typeof job !== "string"|| !name || typeof name !== "string" || !technologies || typeof technologies !== "string"|| !description|| typeof description !== "string") {
       return res.status(400).json({
         error:
           "Faltan campos obligatorios: Autora, Trabajo, Nombre del proyecto, Tecnologías o Descripción.",
