@@ -21,6 +21,8 @@ app.get("/project/:id", getProjectIdController);
 
 app.post("/project", postProjectController);
 
+app.use("/project-promo-55-module-3-team-3", express.static(path.join(__dirname, "..", "public")));
+
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use((req, res) => {
