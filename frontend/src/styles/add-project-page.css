@@ -30,5 +30,22 @@ button:active {
 }
 
 button:disabled {
-    opacity: 0.2;
+  opacity: 0.2;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .layout > * {
+    flex: 1;
+    max-width: 100%;
+  }
 }
