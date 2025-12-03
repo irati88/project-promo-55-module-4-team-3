@@ -1,0 +1,10 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: ProyectHadas
+  description: API para la gestión de proyectos
+paths: {}
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/adalab-4b8/ProyectHadas/1.0.0
