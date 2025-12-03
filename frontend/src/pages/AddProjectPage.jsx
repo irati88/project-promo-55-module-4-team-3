@@ -76,7 +76,7 @@ const AddProjectPage = () => {
         throw new Error("Error al guardar el proyecto: " + error.message);
       });
   };
-  
+
   const handleResetForm = () => {
     setFormData({
       name: "",
@@ -98,19 +98,21 @@ const AddProjectPage = () => {
   return (
     <>
       <Header />
-      <Preview
-        formData={formData}
-        authorImage={authorImage}
-        projectImage={projectImage}
-      />
-      <Form
-        formData={formData}
-        updateForm={updateForm}
-        updateProjectImage={updateProjectImage}
-        updateAutorImg={updateAutorImg}
-        handleSaveProject={handleSaveProject}
-        handleResetForm={handleResetForm}
-      />
+      <div className="layout">
+        <Preview
+          formData={formData}
+          authorImage={authorImage}
+          projectImage={projectImage}
+        />
+        <Form
+          formData={formData}
+          updateForm={updateForm}
+          updateProjectImage={updateProjectImage}
+          updateAutorImg={updateAutorImg}
+          handleSaveProject={handleSaveProject}
+          handleResetForm={handleResetForm}
+        />
+      </div>
       <Footer />
     </>
   );
