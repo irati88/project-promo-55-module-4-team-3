@@ -1,5 +1,5 @@
 export const getProjects = () => {
-  return fetch("http://localhost:3000/projects")
+  return fetch("/api/projects")
     .then((response) => response.json())
     .then((data) => {
       const cleanData = data.map((item) => {
@@ -22,7 +22,7 @@ export const getProjects = () => {
 };
 
 export const addProject = (data) => {
-  return fetch("http://localhost:3000/project", {
+  return fetch("/api/project", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const addProject = (data) => {
 };
 
 export const getProject = (id) => {
-  return fetch(`http://localhost:3000/project/${id}`)
+  return fetch(`/api/project/${id}`)
     .then((response) => response.json())
     .then((item) => {
       return {
