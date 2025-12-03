@@ -9,8 +9,125 @@
     {
       "url": "https://virtserver.swaggerhub.com/adalab-4b8/ProyectHadas/1.0.0",
       "description": "SwaggerHub API Auto Mocking"
+    },
+
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor de desarrollo"
     }
   ],
-  "paths": {},
-  "components": {}
+  "paths": {
+    "/api/projects": {
+      "get": {
+        "summary": "Lista todos los proyectos",
+        "responses": {
+          "200": {
+            "description": "Operación exitosa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "autor": { "type": "string" },
+                      "job": { "type": "string" },
+                      "image": { "type": "string" },
+                      "id_project": { "type": "number" },
+                      "name": { "type": "string" },
+                      "slogan": { "type": "string" },
+                      "description": { "type": "string" },
+                      "technologies": { "type": "string" },
+                      "photo": { "type": "string" },
+                      "repo": { "type": "string" },
+                      "demo": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "/api/project": {
+    "post": {
+      "summary": "Crea un nuevo proyecto",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "autor": { "type": "string" },
+                "job": { "type": "string" },
+                "image": { "type": "string" },
+                "name": { "type": "string" },
+                "slogan": { "type": "string" },
+                "description": { "type": "string" },
+                "technologies": { "type": "string" },
+                "photo": { "type": "string" },
+                "repo": { "type": "string" },
+                "demo": { "type": "string" }
+              },
+              "required": [
+                "autor",
+                "job",
+                "name",
+                "technologies",
+                "description"
+              ]
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Proyecto creado exitosamente"
+        }
+      }
+    }
+  },
+
+  "/api/project/{id}": {
+    "get": {
+      "summary": "Obtiene un proyecto por su ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": { "type": "integer" }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Operación exitosa",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "autor": { "type": "string" },
+                  "job": { "type": "string" },
+                  "image": { "type": "string" },
+                  "id_project": { "type": "number" },
+                  "name": { "type": "string" },
+                  "slogan": { "type": "string" },
+                  "description": { "type": "string" },
+                  "technologies": { "type": "string" },
+                  "photo": { "type": "string" },
+                  "repo": { "type": "string" },
+                  "demo": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
